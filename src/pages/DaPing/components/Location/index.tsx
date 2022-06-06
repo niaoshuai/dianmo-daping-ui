@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Map, MapApiLoaderHOC, Circle } from 'react-bmapgl';
+import { Map, MapApiLoaderHOC } from 'react-bmapgl';
 import { request } from 'ice';
 
 const Location = () => {
