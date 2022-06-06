@@ -1,5 +1,11 @@
 {
   "vite": true,
+  "proxy": {
+    "/api": {
+      "enable": true,
+      "target": "https://console-mock.apipost.cn/app/mock/project/14b25233-f067-4977-c685-9321f9baf2c7"
+    }
+  },
   "plugins": [
     [
       "build-plugin-moment-locales",
