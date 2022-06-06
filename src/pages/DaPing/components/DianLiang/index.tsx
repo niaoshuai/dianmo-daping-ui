@@ -112,7 +112,7 @@ const DianLiang = () => {
         });
       });
     }, 2000);
-  });
+  }, []);
 
   return (
     <div>

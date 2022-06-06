@@ -16,10 +16,10 @@ const Location = () => {
         .then((data) => {
           // @ts-ignore
           // setMapLocation(new BMapGL.Point(data.data.lng, data.data.lat));
-          setMapLocation(new BMapGL.Point(113.665412, 34.757975 + Math.random() / 100));
+          setMapLocation(new BMapGL.Point(113.665412, 34.757975 + 0.001110 * Math.random()));
         });
-    }, 5000);
-  });
+    }, 2000);
+  }, []);
 
   return (
     <div>
@@ -34,10 +34,6 @@ const Location = () => {
         <Marker
           position={mapLocation}
           icon={'loc_blue'}
-          autoViewport
-          viewportOptions={{
-            zoomFactor: -12,
-          }}
         />
       </Map>
     </div>
