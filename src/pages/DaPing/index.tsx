@@ -1,9 +1,12 @@
 import { Box } from '@alifd/next';
 import * as React from 'react';
 import DianLiang from './components/DianLiang';
-import DianLiangQushi from './components/DianLiangQushi';
 import Speed from './components/Speed';
 import styles from './index.module.scss';
+import DianLiangQuShi from '@/pages/DaPing/components/DianLiangQuShi';
+import SpeedQuShi from '@/pages/DaPing/components/SpeedQuShi';
+import LocationQuShi from './components/LocationQuShi';
+import Location from '@/pages/DaPing/components/Location';
 
 const DaPing = () => {
   return (
@@ -16,22 +19,33 @@ const DaPing = () => {
         </Box>
       </div>
       <div>
+        <div>
+          实时信息
+        </div>
         <Box direction="row" align="center">
           <Box >
             <DianLiang />
           </Box>
           <Box >
-            <DianLiangQushi />
+            <Speed />
           </Box>
           <Box >
-            <Speed />
+            <Location />
           </Box>
         </Box>
       </div>
 
       <div>
         <Box direction="row" align="center">
-          DIAOBAO
+          <Box >
+            <DianLiangQuShi />
+          </Box>
+          <Box >
+            <SpeedQuShi />
+          </Box>
+          <Box >
+            <LocationQuShi />
+          </Box>
         </Box>
       </div>
     </div>
