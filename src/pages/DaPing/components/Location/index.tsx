@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Map, MapApiLoaderHOC, Circle } from 'react-bmapgl';
+import { request } from 'ice';
 
 const Location = () => {
+  // @ts-ignore
+  const [mapCenter, setMapCenter] = useState<BMapGL.Point>();
+
+  useEffect(() => {
+    setInterval(() => {
+      request('/api/location')
+        .then((data) => {
+          // @ts-ignore
+          setMapCenter(new BMapGL.Point(data.data.lng, data.data.lat));
+        });
+    }, 5000);
+  });
+
   return (
     <div>
       <div>
@@ -9,18 +23,9 @@ const Location = () => {
       </div>
       <Map
         style={{ height: 480, width: 480 }}
-        center={new BMapGL.Point(113.665412, 34.757975)}
+        center={mapCenter}
         zoom={15}
-      >
-        <Circle
-          center={new BMapGL.Point(113.665412, 34.757975)}
-          radius={500}
-          strokeColor="#f00"
-          strokeWeight={2}
-          fillColor="#ff0"
-          fillOpacity={0.3}
-        />
-      </Map>
+      />
     </div>
   );
 };
