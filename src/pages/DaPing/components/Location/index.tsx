@@ -16,9 +16,9 @@ const Location = () => {
         .then((data) => {
           // @ts-ignore
           // setMapLocation(new BMapGL.Point(data.data.lng, data.data.lat));
-          setMapLocation(new BMapGL.Point(113.665412 + Math.random() - 0.5, 34.757975 + Math.random() - 0.5));
+          setMapLocation(new BMapGL.Point(113.665412, 34.757975 + Math.random() / 100));
         });
-    }, 10000);
+    }, 5000);
   });
 
   return (
